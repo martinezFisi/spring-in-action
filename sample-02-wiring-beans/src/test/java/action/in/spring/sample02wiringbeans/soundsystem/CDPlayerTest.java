@@ -14,11 +14,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CDPlayerTest {
 
     @Autowired
+    private MediaPlayer player;
+
+    @Autowired
     private CompactDisc cd;
 
     @Test
     public void cdShouldNotBeNull(){
         assertNotNull(cd, "cd should not be null ");
+    }
+
+    @Test
+    public void play(){
+        player.play();
     }
 
 }
