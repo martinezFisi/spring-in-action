@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dookie" class="action.in.spring.sample04xml.systemsound.Dookie" />
+    <bean id="americanIdiot" class="action.in.spring.sample04xml.systemsound.AmericanIdiot" />
+
+    <bean id="cdPlayer" class="action.in.spring.sample04xml.systemsound.CDPlayer">
+        <constructor-arg ref="dookie"/>
+    </bean>
+
+    <bean id="cdPlayer2" class="action.in.spring.sample04xml.systemsound.CDPlayer">
+        <constructor-arg ref="americanIdiot"/>
+    </bean>
+
+</beans>
