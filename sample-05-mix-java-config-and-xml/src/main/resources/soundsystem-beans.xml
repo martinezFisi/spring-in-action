@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    Referencing Java Config-->
+    <bean class="action.in.spring.sample05mixjavaconfigandxml.config.SoundSystemConfig"/>
+
+    <bean id="cdPlayerDookie" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.player.CDPlayer">
+        <constructor-arg ref="dookie"/>
+    </bean>
+
+    <bean id="cdPlayerAmericanIdiot" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.player.CDPlayer">
+        <constructor-arg ref="americanIdiot"/>
+    </bean>
+
+    <!--    Tracks List-->
+    <util:list id="dookieTrackList" value-type="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.Track">
+        <ref bean="comingClean"/>
+        <ref bean="havingABlast"/>
+    </util:list>
+
+    <util:list id="americanIdiotTrackList" value-type="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.Track">
+        <ref bean="comingClean"/>
+        <ref bean="havingABlast"/>
+    </util:list>
+
+    <!--    Tracks-->
+    <bean id="comingClean" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.ComingClean"/>
+    <bean id="havingABlast" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.HavingABlast"/>
+    <bean id="letterbomb" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.Letterbomb"/>
+    <bean id="whatsername" class="action.in.spring.sample05mixjavaconfigandxml.soundsystem.track.Whatsername"/>
+
+</beans>
